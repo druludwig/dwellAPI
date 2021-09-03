@@ -13,8 +13,7 @@ Job.init({
     },
     // Should this task be completed before others
     priority_high: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
+        type: DataTypes.TEXT
     },
     // What should be included in the scope of work
     includes: {

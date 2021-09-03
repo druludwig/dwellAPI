@@ -16,9 +16,9 @@ const plantSeeds = async () => {
     {
       name: "Change smoke detector batteries",
       date_due: "2021-09-05",
-      priority_high: true,
+      priority_high: "Yes",
       description: "Change batteries in all smoke detectors. Laundry room detector uses AA batteries.",
-      req_good_weather: false,
+      req_good_weather: "No",
       time_req: 15,
       num_people_req: 1,
       cost: 6,
@@ -27,9 +27,9 @@ const plantSeeds = async () => {
     {
       name: "Clean washing machine filter",
       date_due: "2021-10-01",
-      priority_high: false,
+      priority_high: "No",
       description: "Users manual is in laundry room drawer. Follow instructions for cleaning pump filter.",
-      req_good_weather: false,
+      req_good_weather: "No",
       time_req: 15,
       num_people_req: 1,
       cost: 0,
@@ -38,9 +38,9 @@ const plantSeeds = async () => {
     {
       name: "Inspect exterior siding",
       date_due: "2021-11-01",
-      priority_high: true,
+      priority_high: "Yes",
       description: `Walk perimeter of house and inspect siding and trim for any separations. In case of separation, clean with damp cloth and fill with caulk. After 24 hours, touch up with paint in garage labeled "Exterior New 2018".`,
-      req_good_weather: true,
+      req_good_weather: "Yes",
       time_req: 45,
       num_people_req: 2,
       cost: 10,
@@ -54,7 +54,7 @@ const plantSeeds = async () => {
     {
       name: "Under Home Inspection",
       date_due: "2022-01-01",
-      priority_high: true,
+      priority_high: "Yes",
       includes: "An underhome inspection of the entire crawl space.",
       not_included: "Outdoor perimeter pest spraying is not needed.",
       target_cost: 250
@@ -62,7 +62,7 @@ const plantSeeds = async () => {
     {
       name: "Septic Service",
       date_due: "2023-06-01",
-      priority_high: false,
+      priority_high: "No",
       includes: "Standard pumping service.",
       not_included: "Camera inspection not required.",
       target_cost: 330
@@ -70,7 +70,7 @@ const plantSeeds = async () => {
     {
       name: "Gutter Cleaning",
       date_due: "2021-11-15",
-      priority_high: true,
+      priority_high: "Yes",
       includes: "Cleaning of gutters. Inspection of downspouts.",
       not_included: "Moss removal or moss treatment not required.",
       target_cost: 150

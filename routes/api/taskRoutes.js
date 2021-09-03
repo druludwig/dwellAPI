@@ -55,8 +55,8 @@ router.get('/date-report/30', (req, res) => {
 });
 
 //Get ALL tasks that require GOOD WEATHER
-router.get('/date-report/weather', (req, res) => {
-  return sequelize.query(`SELECT * FROM tasks WHERE req_good_weather = 1`, { type: QueryTypes.SELECT })
+router.get('/report/weather', (req, res) => {
+  return sequelize.query(`SELECT * FROM tasks WHERE req_good_weather = "Yes"`, { type: QueryTypes.SELECT })
     .then(FilteredTasks => {
       console.log(FilteredTasks)
       res.json(FilteredTasks)
@@ -69,8 +69,23 @@ router.get('/date-report/weather', (req, res) => {
     })
 });
 
-//Get ALL tasks that require GOOD WEATHER
-router.get('/date-report/helpneeded', (req, res) => {
+//Get ALL HIGH PRIORITY Tasks
+router.get('/priority/high', (req, res) => {
+  return sequelize.query(`SELECT * FROM tasks WHERE priority_high = "Yes"`, { type: QueryTypes.SELECT })
+    .then(FilteredTasks => {
+      console.log(FilteredTasks)
+      res.json(FilteredTasks)
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({
+        message: "server error",
+        error: err
+      })
+    })
+});
+
+//Get ALL tasks that require more than TWO PEOPLE
+router.get('/report/helpneeded', (req, res) => {
   return sequelize.query(`SELECT * FROM tasks WHERE num_people_req >= 2`, { type: QueryTypes.SELECT })
     .then(FilteredTasks => {
       console.log(FilteredTasks)

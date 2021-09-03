@@ -13,8 +13,7 @@ Task.init({
     },
     // Should this task be completed before others
     priority_high: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
+        type: DataTypes.TEXT
     },
     // What are the steps required to complete the task
     description: {
@@ -22,8 +21,7 @@ Task.init({
     },
     // Does the task require non-rainy conditions
     req_good_weather: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
+        type: DataTypes.TEXT
     },
     // How much time, in MINUTES, will the task require
     time_req: {
