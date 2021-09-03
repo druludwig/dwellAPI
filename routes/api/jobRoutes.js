@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const db = require('../../models');
-
+const cors = require('cors');
+router.use(cors())
+const { QueryTypes } = require('sequelize');
+const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
   db.Job.findAll()
