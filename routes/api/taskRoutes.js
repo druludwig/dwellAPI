@@ -2,9 +2,11 @@ const router = require('express').Router();
 const db = require('../../models');
 const cors = require('cors');
 router.use(cors())
-let moment = require('moment');
+const moment = require('moment');
 const { QueryTypes } = require('sequelize');
 const sequelize = require('../../config/connection');
+const next48 = require('../modules/whetherTask')
+
 
 //Get a SINGLE task by ID
 router.get('/:id', (req, res) => {
@@ -84,7 +86,12 @@ router.get('/priority/high', (req, res) => {
     })
 });
 
-//Get ALL tasks that require more than TWO PEOPLE
+// Next 48 Report
+router.get('/next48', (req, res) => {
+  return next48
+});
+
+// Get ALL tasks that require more than TWO PEOPLE
 router.get('/report/helpneeded', (req, res) => {
   return sequelize.query(`SELECT * FROM tasks WHERE num_people_req >= 2`, { type: QueryTypes.SELECT })
     .then(FilteredTasks => {
